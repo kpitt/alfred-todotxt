@@ -37,6 +37,9 @@ def main():
         if len(todos):
             tmpfeedback = []
             for r in todos:
+                # Don't include completed tasks
+                if r[0] == 'x' and r[1] == ' ':
+                    continue
                 if r[0] == '(' and r[2] == ')' and r[1]:
                     pri = r[1].upper()
                 else:
